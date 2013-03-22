@@ -36,12 +36,12 @@ class Sender(threading.Thread):
     """
 
 
-    def __init__(self, color_queue, controller=None, base=None, address=None):
+    def __init__(self, color_queue, controller=None, address=None):
 
-        if not controller and not (base or address):
-            raise ValueError('You should specify at least a controller or a base and address alltogether')
+        if not controller and not address:
+            raise ValueError('You should specify at least a controller or address')
 
-        self.controller = controller or dmx.Controller(base, address, nodaemon=False)
+        self.controller = controller or dmx.Controller(address, nodaemon=False)
         if not controller:
             self.controller.start()
         self.queue = color_queue
