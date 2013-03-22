@@ -29,6 +29,7 @@ Simple Ambilight Sender
 
 from artnet import dmx
 import threading
+import time
 
 class Sender(threading.Thread):
     """ Simple class that read colors from a Queue and
@@ -53,6 +54,9 @@ class Sender(threading.Thread):
 
             for i in xrange(len(color)):
                 self.controller.add(color[i])
+
+                time.sleep(1)
+
 
             self.queue.task_done()
 
