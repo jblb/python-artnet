@@ -1,6 +1,8 @@
 import time, sys, socket, logging, threading, itertools
 
-from artnet import packet
+# from artnet import packet
+from packet import *
+
 
 log = logging.getLogger(__name__)
 
