@@ -53,7 +53,7 @@ class Sender(threading.Thread):
             color = self.queue.get()
 
             for i in xrange(len(color)):
-                self.controller.add(color[i])
+                self.controller.add(iter([color[i]]))
 
                 time.sleep(1)
 
