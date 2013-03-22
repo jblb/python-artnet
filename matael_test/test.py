@@ -39,8 +39,7 @@ q.put((0,0,255))
 
 s.start()
 
-while not q.empty():
-    pass
+q.join()
 
 sys.exit()
 
