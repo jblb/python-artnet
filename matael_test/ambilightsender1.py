@@ -35,8 +35,9 @@ class Sender(threading.Thread):
     output them through DMX over ArtNet
     """
 
-
     def __init__(self, color_queue, controller=None, address=None):
+
+        threading.Thread.__init__(self)
 
         if not controller and not address:
             raise ValueError('You should specify at least a controller or address')
